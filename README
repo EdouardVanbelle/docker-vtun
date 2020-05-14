@@ -2,7 +2,7 @@
 Simple container to start a vtun server
 
 # build
-docker build -t vtun:buster .
+docker build -t --pull vtun:buster .
 
 
 # run
