@@ -2,10 +2,10 @@
 Simple container to start a vtun server
 
 # build
-docker build -t --pull vtun:buster .
+docker build --pull -t vtun:bullseye .
 
 
 # run
 # important: container must be able to play with dev/net/tun and must have NET_ADMIN capabilities
 
-docker run -t -d  --device=/dev/net/tun:/dev/net/tun --cap-add=NET_ADMIN --network=host --name "vtun-instance" vtun:buster
+docker run -t -d   --restart=unless-stopped --device=/dev/net/tun:/dev/net/tun --cap-add=NET_ADMIN --network=host --name "vtun-instance" vtun:bullseye
